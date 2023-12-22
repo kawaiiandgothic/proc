@@ -21,7 +21,7 @@ size_t proc_module(const wchar_t* module_name)
 	HANDLE hSnapshot = CreateToolhelp32Snapshot(TH32CS_SNAPMODULE, proc_id);
 	Module32First(hSnapshot, &module_entry);
 	do {
-		if (wcscmp(module_entry.szModule, module_name) == 0) {
+		if (!wcscmp(module_entry.szModule, module_name)) {
 			CloseHandle(hSnapshot);
 			return module_entry.modBaseAddr;
 		}
