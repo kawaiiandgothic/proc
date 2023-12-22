@@ -10,7 +10,6 @@ int proc_init(const char* window_name)
 		return 0;
 	GetWindowThreadProcessId(window, &proc_id);
 	proc_handle = OpenProcess(PROCESS_VM_READ, 0, proc_id);
-
 	return 1;
 }
 
