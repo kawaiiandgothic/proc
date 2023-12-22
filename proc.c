@@ -14,7 +14,7 @@ int proc_init(const char* window_name)
 	return 1;
 }
 
-size_t proc_module(wchar_t* module_name)
+size_t proc_module(const wchar_t* module_name)
 {
 	MODULEENTRY32 module_entry;
 	module_entry.dwSize = sizeof(MODULEENTRY32);
